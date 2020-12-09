@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	async function formSend(e) {
 		let formData = new FormData(form);
-		let response = await fetch('sendmail.php', {
-			method: 'POST',
-			body: formData
-		});
+		let response = await fetch('sendmail.php', {method: 'POST',body: formData});
 		if (response.ok) {
 			let result = await response.json();
 			alert(result.massage);
